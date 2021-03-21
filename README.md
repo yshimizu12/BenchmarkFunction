@@ -1,7 +1,7 @@
 # BenchmarkFunction
 
 This repository contains benchmark functions for evaluating optimization methods.  
-The languag is python.  
+The language is python.  
 
 User-defined function: benchmark_function\benchmark_function.py  
 Demo: benchmark_function_visualized.ipynb  
