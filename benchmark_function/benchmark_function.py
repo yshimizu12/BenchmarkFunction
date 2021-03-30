@@ -70,6 +70,16 @@ class BenchmarkFunction:
         Search area: [-5.12,5.12]^n
         Optimal solusion: (1,...,1)
     ---------------
+    
+    search_area------
+    Return the search areas (type: dict) for each function 
+    ---------------
+
+    optimal_solution------
+    Return the optimal solutions (type: dict) for each function 
+    dimension (int) :
+        dimension of input variable
+    ---------------
     """
     def __init__(self):
         pass
@@ -140,3 +150,34 @@ class BenchmarkFunction:
         
         return 10*dim + \
                 ((input_array-1)**2-10*np.cos(2*np.pi*(input_array-1))).sum(axis=1)
+
+    def search_area(self):
+        search_area = {
+            'Sphere' : [-5.12,5.12],
+            'Ellipsoid' : [-5.12,5.12],
+            'kTablet' : [-5.12,5.12],
+            'RosenbrockStar' : [-2.048,2.048],
+            'RosenbrockChain' : [-2.048,2.048],
+            'Bohachevsky' : [-5.12,5.12],
+            'Ackley' : [-32.768,32.768],
+            'Schaffer' : [-100,100],
+            'Rastrigin' : [-5.12,5.12],
+        }
+        return search_area
+    
+    def optimal_solution(self, dimension=2):
+        zeros = [0]*dimension
+        ones = [1]*dimension
+        
+        optimal_solution = {
+            'Sphere' : zeros,
+            'Ellipsoid' : zeros,
+            'kTablet' : zeros,
+            'RosenbrockStar' : ones,
+            'RosenbrockChain' : ones,
+            'Bohachevsky' : zeros,
+            'Ackley' : zeros,
+            'Schaffer' : zeros,
+            'Rastrigin' : ones,
+        }
+        return optimal_solution
